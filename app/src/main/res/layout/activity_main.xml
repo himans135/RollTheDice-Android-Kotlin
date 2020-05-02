@@ -1,0 +1,159 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".MainActivity">
+
+    <TextView
+        android:id="@+id/game_player_text"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="8dp"
+        android:layout_marginTop="16dp"
+        android:layout_marginEnd="8dp"
+        android:textSize="24sp"
+        android:textStyle="bold"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/cardView" />
+
+    <ImageView
+        android:id="@+id/dice_image_1"
+        android:layout_width="200dp"
+        android:layout_height="200dp"
+        android:layout_marginStart="16dp"
+        android:layout_marginTop="32dp"
+        android:layout_marginEnd="16dp"
+        android:background="#184DA6"
+        android:contentDescription="@string/dice_image_content_description"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/btnGamePlay"
+        app:srcCompat="@drawable/face_1" />
+
+    <androidx.cardview.widget.CardView
+        android:id="@+id/cardView"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="8dp"
+        android:layout_marginEnd="8dp"
+        app:cardCornerRadius="8dp"
+        app:cardPreventCornerOverlap="true"
+        app:cardUseCompatPadding="true"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent">
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+
+            <TextView
+                android:id="@+id/lbplayerA"
+                android:layout_width="120dp"
+                android:layout_height="30dp"
+                android:layout_marginTop="8dp"
+                android:fontFamily="serif-monospace"
+                android:text="@string/player_a"
+                android:textAlignment="viewStart"
+                android:textSize="18sp"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent"
+                tools:text="Player A" />
+
+            <TextView
+                android:id="@+id/tvplayerA"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="8dp"
+                android:layout_marginBottom="8dp"
+                android:fontFamily="serif-monospace"
+                android:text="@string/game_point_a"
+                android:textAlignment="center"
+                android:textSize="18sp"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toEndOf="@+id/lbplayerA"
+                app:layout_constraintStart_toStartOf="@+id/lbplayerA"
+                app:layout_constraintTop_toBottomOf="@+id/lbplayerA"
+                tools:text="0" />
+
+            <TextView
+                android:id="@+id/lbplayerB"
+                android:layout_width="120dp"
+                android:layout_height="30dp"
+                android:layout_marginTop="8dp"
+                android:layout_marginEnd="8dp"
+                android:fontFamily="serif-monospace"
+                android:text="@string/player_b"
+                android:textAlignment="viewEnd"
+                android:textSize="18sp"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintTop_toTopOf="parent"
+                tools:text="Player B" />
+
+            <TextView
+                android:id="@+id/tvplayerB"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="8dp"
+                android:layout_marginBottom="8dp"
+                android:fontFamily="serif-monospace"
+                android:text="@string/game_point_b"
+                android:textAlignment="center"
+                android:textSize="18sp"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toEndOf="@+id/lbplayerB"
+                app:layout_constraintStart_toStartOf="@+id/lbplayerB"
+                app:layout_constraintTop_toBottomOf="@+id/lbplayerB"
+                tools:text="0" />
+
+            <TextView
+                android:id="@+id/lb_gamepoint"
+                android:layout_width="120dp"
+                android:layout_height="30dp"
+                android:layout_marginTop="8dp"
+                android:fontFamily="serif-monospace"
+                android:text="@string/game_point"
+                android:textAlignment="center"
+                android:textSize="18sp"
+                app:layout_constraintEnd_toStartOf="@+id/lbplayerB"
+                app:layout_constraintStart_toEndOf="@+id/lbplayerA"
+                app:layout_constraintTop_toTopOf="parent"
+                tools:text="Game Point" />
+
+            <TextView
+                android:id="@+id/gamepoint"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="8dp"
+                android:layout_marginBottom="8dp"
+                android:fontFamily="serif-monospace"
+                android:text="@string/game_point_c"
+                android:textAlignment="center"
+                android:textSize="18sp"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toEndOf="@+id/lb_gamepoint"
+                app:layout_constraintStart_toStartOf="@+id/lb_gamepoint"
+                app:layout_constraintTop_toBottomOf="@+id/lb_gamepoint"
+                tools:text="100" />
+        </androidx.constraintlayout.widget.ConstraintLayout>
+    </androidx.cardview.widget.CardView>
+
+    <Button
+        android:id="@+id/btnGamePlay"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="8dp"
+        android:layout_marginTop="8dp"
+        android:layout_marginEnd="8dp"
+        android:background="@color/Green"
+        android:text="START"
+        android:textColor="@color/white"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/game_player_text" />
+
+</androidx.constraintlayout.widget.ConstraintLayout>
